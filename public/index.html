@@ -6,11 +6,61 @@
         <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
-        <h1>Chat!</h1>
-        <form>
-            <input id="message" type="text" placeholder="message"/>
-            <input type="submit" value="Send"/>
-        </form>
+        <div id="page">
+            <div id="chat" class="a">
+                <h1>Chat!</h1>
+                <form>
+                    <input id="handle" type="text" placeholder="Handle"/>
+                    <input id="message" type="text" placeholder="message"/>
+                    <input type="submit" value="Send" onsubmit="event.preventDefault()"/>
+                </form>
+            </div>
+            <div id="toolbox" class = "b">
+                <div>
+                    <form>
+                        <table style="width:400px; z-index: 1;" class="center">
+                        <tr>
+                            <td align="right">Answer: </td>
+                            <td align="left"><input type="text" name="first" id="answer" placeholder="enter a word to draw"/></td>
+                        </tr>
+                        <tr>
+                            <td align="right">Color: </td>
+                            <td align="left"><input type="text" name="last" id="hex" placeholder="enter color" /></td>
+                        </tr>
+                        <tr>
+                            <td align="right">Clear Canvas: </td>
+                            <td align="left"><button type="button" id="clear">Clear</button></td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <label class="center"id="label">Brush Size:</td>
+                                    <td align="left">
+                                    <select id="brushSize" onchange="setBrush(this.value)">
+                                    <option value="">Select</option>
+                                    <option value="large">Large</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="small">Small</option>
+                                    </select>
+                                </td>
+                                </label>
+                            
+                            
+                        </tr>
+                        <tr>
+                            <td align="right">Fill Canvas: </td>
+                            <td align="left"><button type="button" id="fill">fill</button></td>
+                        </tr>
+                        </table>
+                    </form>
+                </div>
+                <div id = "board">
+                    <canvas id="draw" style="border: 10px solid black; position:absolute; left:0px;"></canvas>
+                </div>
+            </div>
+        
+            
+        </div>
+        <script src="app.js"></script>
 
         <ul id="thread"></ul>
 

@@ -5,13 +5,15 @@ socket.on("connect", function(data) {
 
 // listener for 'thread' event, which updates messages
 socket.on("thread", function(data) {
-    $("#thread").append("<li>" + data + "</li>");
+    $("#thread").append("<li>" + data.handle + ": " + data.message + "</li>");
 });
   
 // sends message to server, resets & prevents default form action
 $("form").submit(function() {
 var message = $("#message").val();
-socket.emit("messages", message);
+var handle = $("#handle").val();
+socket.emit("messages", {message, handle});
 this.reset();
 return false;
 });
+
