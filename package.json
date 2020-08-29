@@ -1,0 +1,29 @@
+{
+  "name": "chatapp",
+  "version": "1.0.0",
+  "description": "chat and paint app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atulgera02/chatPaint.git"
+  },
+  "keywords": [
+    "chat",
+    "and",
+    "paint",
+    "app"
+  ],
+  "author": "Atul Gera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atulgera02/chatPaint/issues"
+  },
+  "homepage": "https://github.com/atulgera02/chatPaint#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
